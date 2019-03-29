@@ -99,7 +99,7 @@ def play_wav(p_audio = pyaudio.PyAudio, wav_file = "test.wav", out_index = 1):
 
 def record_AV(cap, mic = None):
     # Start Audio & Video, then play the sound
-    #print 'booting up threads'
+    #print('booting up threads')
     t = threading.Thread(target=speak)
     #t = threading.Thread(target=play_wav,args(out_index=mic,) 
     #record_audio()
@@ -107,13 +107,13 @@ def record_AV(cap, mic = None):
     #record_video()
     v = threading.Thread(target=record_video, args=(cap,))
     
-    print 'starting audio'
+    print('starting audio')
     a.start()
    
-    #print 'starting video'
+    #print('starting video')
     v.start() 
     
-    #print 'playing sound'
+    #print('playing sound')
     t.start()
     """
     count = 0
@@ -141,7 +141,7 @@ def record_AV(cap, mic = None):
 # There could be a way to automate it...
 def record_audio(length = 10,mic = None):
     
-    #print 'recording audio...'
+    #print('recording audio...')
     p = pyaudio.PyAudio()
     
     if mic == None:
@@ -170,7 +170,7 @@ def record_audio(length = 10,mic = None):
     stream.stop_stream()
     stream.close()
 
-    #print 'saving audio...'
+    #print('saving audio...')
     date_string = time.strftime("%Y-%m-%d-%H:%M")
     outfile = 'test_audio_' + date_string + ".wav"
     
@@ -190,7 +190,7 @@ def record_audio(length = 10,mic = None):
     return
 
 def record_video(cap):
-    print 'recording video...'
+    print('recording video...')
     clip = []
     """
     v_0 = time.time()
@@ -203,11 +203,12 @@ def record_video(cap):
     clip.append(frame)
     v_2 = time.time()
     
-    print 'time series:'
-    print v_0
-    print v_start
-    print v_wait
-    print v_2"""
+    print('time series:')
+    print(v_0)
+    print(v_start)
+    print(v_wait)
+    print(v_2)
+    """
     
     v_start = time.time()
     
@@ -226,7 +227,7 @@ def record_video(cap):
     vid_length = v_stop - v_start
     num_frames = len(clip)
     fps = num_frames / vid_length
-    print fps
+    print(fps)
     round_fps = int(round(fps))
     global V_START
     global V_FINISH
@@ -240,7 +241,7 @@ def record_video(cap):
 
 def save_clip(clip,fps):
     global RECORDING
-    print 'saving clip....'
+    print('saving clip....')
     date_string = time.strftime("%Y-%m-%d-%H:%M:%S")
     outfile = 'test_vid' + date_string + ".avi"
     framerate = str(fps)
@@ -253,18 +254,18 @@ def save_clip(clip,fps):
         rot_im = np.rot90(col_im,3)
         im = Image.fromarray(rot_im)
         im.save(p.stdin, 'JPEG')
-    #print clip[i]
+    #print(clip[i])
     p.stdin.close()
     p.wait()
     
     global A_START,V_START, A_TMP
     offset = V_START - A_START
-    print V_START
-    print A_START
+    print(V_START)
+    print(A_START)
     a_file = A_TMP
     splice_AV(a_file,outfile,offset)
     RECORDING = False
-    print "monitoring..."
+    print("monitoring...")
     return
 
 # Combine audio & video with calculated offset

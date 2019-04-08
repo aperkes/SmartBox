@@ -4,6 +4,6 @@
 
 ## Ignore old stuff (sort of rubbish)
 OldStuff/
-.ipynb_checkpoints
-**/*.ipynb_checkpoints/
-*.ipynb_checkpoints/
+.*
+.ipynb_checkpoints/*.ipynb
+!/.gitignore

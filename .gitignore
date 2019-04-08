@@ -1,2 +1,6 @@
 
+## Ignore all videos (too big) 
 *.avi
+
+## Ignore old stuff (sort of rubbish)
+OldStuff/

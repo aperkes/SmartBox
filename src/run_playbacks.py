@@ -16,6 +16,9 @@ import pyaudio, wave
 from subprocess import Popen
 import pandas as pd
 
+THROTTLE_FPS = True
+INDEX_FIX = 2
+
 motion_threshold = 10
 cage_motion = 10
 frame_motion = 12
@@ -32,7 +35,7 @@ PLAYING = False
 
 log_dict = {
     'Playback':False}
-parent_dir = '/home/ammon/Documents/Scripts/SmartBox/'
+parent_dir = '/home/ammon/Documents/SmartBox/'
 video_dir = parent_dir + 'Recordings/'
 log_dir = parent_dir + 'Logs/'
 song_directory = parent_dir + 'Songs/'
@@ -66,8 +69,10 @@ def load_cameras():
     caps = [0] * n_cameras
     rets = [0] * n_cameras
     for c in range(n_cameras):
-        caps[c] = cv2.VideoCapture(c)
-
+        ## the index needs to be multiplied by 2 to work on this computer for some reason
+        caps[c] = cv2.VideoCapture(c * INDEX_FIX)
+        if THROTTLE_FPS:
+            caps[c].set(cv2.CAP_PROP_FPS,15)
     ret,frame = caps[0].read()
     fps = caps[0].get(cv2.CAP_PROP_FPS)
     fshape = frame.shape
@@ -478,13 +483,13 @@ def tidy_up(success):
 if __name__ == "__main__":
     caps = load_cameras()
     h,w,fps = check_cameras(caps)
-    complete, caps, corner_array = locate_markers(caps, visual=True)
+    complete, caps, corner_array = locate_markers(caps, visual=False)
     print(complete, corner_array)
     if complete:
         camera_order, corner_array = get_order(corner_array)
         define_cages(corner_array)
         #print(window_dict)
-    success, cage_motion,monitor_time = monitor_cameras(caps,visual=True)
+    success, cage_motion,monitor_time = monitor_cameras(caps,visual=False)
     print(success,cage_motion, monitor_time)
     #unload_cameras(caps)
     #caps = load_cameras()

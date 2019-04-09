@@ -1,8 +1,8 @@
 BirdGroup,SongFile,Date,Time,Played
 1,BOD.wav,0,0,1
 1,LB-.wav,0,0,1
-1,BDY.wav,0,0,0
-1,BDY-.wav,0,0,0
+1,BDY.wav,0,0,1
+1,BDY-.wav,0,0,1
 1,ND.wav,0,0,0
 1,LB.wav,0,0,0
 1,LB-.wav,0,0,0

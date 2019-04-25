@@ -192,3 +192,17 @@ Playback: True; Markers: True; BoolMotion: [0. 0. 0. 0. 0. 0. 0. 0. 0.]; Motion:
 Playback: True; Markers: False; BoolMotion: [0. 0. 0. 0.]; Motion: [ 992.2693686   977.7693132  1006.85677276  795.50537801]; Song: BDY.wav; DT: 2019-04-09 13:27:39.086512; 
 Playback: True; Markers: True; BoolMotion: [0. 0. 0. 0. 0. 0. 0. 0. 0.]; Motion: [648.7418153  702.9838309  461.6354835  743.9386685  684.17188812
  610.35511665 684.05224674 601.84284082 586.07226406]; Song: BDY-.wav; DT: 2019-04-09 13:32:15.633574; 
+Playback: True; Markers: False; BoolMotion: [0. 7. 0. 2.]; Motion: [1092.012975   1016.4000618   933.87274987 1034.00415062]; Song: ND.wav; DT: 2019-04-14 09:48:33.245556; 
+Playback: True; Markers: True; BoolMotion: [0. 6. 0. 0. 0. 0. 0. 4. 0.]; Motion: [897.7455007  934.17679097 856.58369093 755.38014902 708.54363206
+ 757.75797236 775.39795911 798.34223741 822.56688024]; Song: LB.wav; DT: 2019-04-14 09:53:25.824427; 
+Playback: False; Markers: True; BoolMotion: [428. 414. 388. 388. 388. 392. 393. 422. 420.]; Motion: [5666.36789888 5735.50766747 5159.58236976 4476.72346056 4159.57628784
+ 4629.50160616 4673.8849894  4877.32228453 5160.44504447]; 
+Playback: True; Markers: False; BoolMotion: [0. 0. 0. 0.]; Motion: [10833.37932483 10174.06845552  9277.53102746  9931.76406757]; Song: LB-.wav; DT: 2019-04-24 10:29:41.300093; 
+Playback: True; Markers: False; BoolMotion: [0. 0. 0. 0.]; Motion: [10902.53809012 10078.91000991  9173.38779096  9858.69260407]; Song: BOD.wav; DT: 2019-04-24 13:16:48.043188; 
+Playback: True; Markers: False; BoolMotion: [0. 0. 0. 0.]; Motion: [10640.75645545  9708.14289686  8794.97298273  9504.98376588]; Song: BDY-.wav; DT: 2019-04-24 13:24:53.231183; 
+Playback: True; Markers: False; BoolMotion: [1. 0. 0. 0.]; Motion: [11008.74773751 10256.62077738  9298.83725016  9944.76779303]; Song: ND.wav; DT: 2019-04-24 14:11:20.256796; 
+Playback: True; Markers: False; BoolMotion: [2. 0. 0. 0.]; Motion: [10856.68098356 10480.2093583   9242.09110107  9807.81049043]; Song: BDY.wav; DT: 2019-04-24 14:12:49.020669; 
+Playback: True; Markers: False; BoolMotion: [1. 0. 0. 0.]; Motion: [10894.68900789 10172.26667236  9142.38367041  9776.61366464]; Song: LB.wav; DT: 2019-04-24 14:14:15.979522; 
+Playback: True; Markers: False; BoolMotion: [0. 0. 0. 0.]; Motion: [11064.32871856 10608.50080823  9408.44981831 10154.50851873]; Song: BDY-.wav; DT: 2019-04-24 14:16:21.059851; 
+Playback: True; Markers: False; BoolMotion: [0. 0. 0. 0.]; Motion: [10747.31715557  9790.79934995  8776.54434886  9610.47650058]; Song: BOD.wav; DT: 2019-04-24 15:31:22.056772; 
+Playback: True; Markers: False; BoolMotion: [0. 0. 0. 0.]; Motion: [10797.93141642  9941.65544211  8932.37021647  9752.82069625]; Song: LB-.wav; DT: 2019-04-24 17:01:20.920417; 

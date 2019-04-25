@@ -1,9 +1,8 @@
-#! /usr/bin/env python
-
 ## Code to run playback experiments 
 ## For use it Marc Schmidt's lab
 ## Made April, 2019 by Ammon Perkes
 ## Contact perkes.ammon@gmail.com for questions
+print('Booting up')
 
 import numpy as np
 import cv2
@@ -268,7 +267,7 @@ def monitor_cameras(caps,visual = False):
 ## Currently, how long they must be quiet is determined by counts 
 ## as well as the sleep time between each count. 
 ## If they should be still for 1 minutes, you want counts * wait == 60,000
-    counts = 100
+    counts = 1000
     wait_time = 60
     success = False
     current_frames = np.empty([n_cameras,h,w])
@@ -284,7 +283,7 @@ def monitor_cameras(caps,visual = False):
     previous_frames = np.copy(current_frames)
 ## Until it exhausts its check time or is successful, within each camera, within each designated cage, check for motion
     #end_time = time.time() + monitor_duration
-    end_time = time.time() + 60
+    end_time = time.time() + 300
     count = 0
     while time.time() < end_time and success == False:
     #while True:
@@ -445,6 +444,9 @@ def select_song():
     next_row = song_df.iloc[next_row_index]
     song = next_row['SongFile']
     next_row['Played'] = 1
+    currentDT = datetime.datetime.now()
+    next_row['Date'] = currentDT.strftime("%Y-%m-%d")
+    next_row['Time'] = currentDT.strftime("%H:%M:%S")
 ## Edit the df to show that has been played and save as a tmp file
     song_df.iloc[next_row_index] = next_row
     song_df.to_csv(parent_dir + 'tmp_log.csv', sep=',', index=False)
